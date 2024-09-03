@@ -15,7 +15,7 @@ jobs:
           node-version: '16'  # specify the version of Node.js you need
       - name: Install Dependencies
         run: npm install
-      - name: Build React App
+      - name: Build Angular App
         run: npm run build  # this will create a build directory
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v2
@@ -24,7 +24,7 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-2
       - name: Deploy static site to S3 bucket
-        run: aws s3 sync build/ s3://anup-mobile-world --delete
+        run: aws s3 sync dist/ s3://anup-mobile-world --delete
 
 
 
