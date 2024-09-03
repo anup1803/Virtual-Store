@@ -1,0 +1,32 @@
+<div class="nav">
+  <div class="left-nav">
+    <a routerLink="/product">
+      <div class="image">
+        <img [src]="logo" alt="logo of website" />
+      </div>
+    </a>
+  </div>
+  <div class="center-nav">
+    <div class="search-box">
+      <input
+        type="text"
+        placeholder="Search..."
+        class="search-input"
+        [(ngModel)]="searchList"
+        (input)="search()"
+      />
+    </div>
+  </div>
+  <div class="right-nav">
+    <ul>
+      <li>
+        <a routerLink="/cart">
+          <div class="cart">
+            <span>🛒</span> cart <span>{{ getTotalItems() }}</span>
+          </div>
+        </a>
+      </li>
+      <li><a routerLink="/profile">Profile</a></li>
+    </ul>
+  </div>
+</div>

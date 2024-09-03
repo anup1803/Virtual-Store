@@ -1,0 +1,17 @@
+<h1>Printing in console while writing</h1>
+
+<input type="text" placeholder="Search Here" (input)="displayConsole($event)" />
+
+<h1>Printing After Clicking on Button</h1>
+<input type="text" placeholder="Search Here" />
+<button (click)="displayOnClick($event)">Search</button>
+<p>Value : {{ value2 }}</p>
+
+<h1>Displaying while writing By two way data Binding</h1>
+<div>
+  <input type="text" [(ngModel)]="name" [disabled]="!togle" />
+  <p>Name : {{ name }}</p>
+
+  <input type="radio" name="radio1" (click)="showSearch(true)" /> Enable
+  <input type="radio" name="radio1" (click)="showSearch(false)" />Disable
+</div>

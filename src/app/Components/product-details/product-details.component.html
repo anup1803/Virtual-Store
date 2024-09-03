@@ -1,0 +1,44 @@
+<div class="display">
+  <div class="container">
+    <div class="left-container">
+      <div class="image">
+        <img alt="image of product" [src]="product.thumbnail" />
+      </div>
+    </div>
+    <div class="right-container">
+      <div class="details">
+        <h1>{{ product.title }}</h1>
+        <p>{{ product.description }}</p>
+        <p>{{ product.returnPolicy }}</p>
+        <div class="rating">
+          <div class="left-rating"></div>
+          <div class="right-rating"></div>
+        </div>
+        <div class="price-quantity">
+          <div class="price">
+            <strong>Rs: {{ product.price }}</strong>
+          </div>
+          <p>Shipping and taxes extra</p>
+        </div>
+        <button class="add-cart" (click)="addToCart(product)">
+          Add to Cart
+        </button>
+      </div>
+
+      <div class="details-section">
+        <h2>Product Details</h2>
+        <ul>
+          <li>Brand: {{ product.brand }}</li>
+          <li>weight: {{ product.weight }}</li>
+          <li>warranty: {{ product.warrantyInformation }}</li>
+          <li>Availability: {{ product.availabilityStatus }}</li>
+          <li>
+            Dimensions : [ width : {{ product.dimensions.width }} height:
+            {{ product.dimensions.height }} depth :
+            {{ product.dimensions.depth }} ]
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

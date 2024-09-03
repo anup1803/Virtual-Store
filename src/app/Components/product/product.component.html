@@ -1,0 +1,29 @@
+<div class="container">
+  <div
+    class="product"
+    *ngFor="let item of productData | filterItems : searchList; let id = index"
+  >
+    <img [src]="item.image" alt="Product Image" class="product-image" />
+    <h2 class="product-title">{{ item.title }}</h2>
+    <p class="product-price">RS: {{ item.price }}</p>
+    <p class="additional-details">
+      Some additional details
+      <a [routerLink]="['/product', 'product-details']" [state]="item"
+        ><span class="additional">here</span></a
+      >
+    </p> 
+    <p class="min-order-quantity">
+      Min Order Quantity: {{ item.minimumOrderQuantity }}
+    </p>
+    <div class="product-card-footer">
+      <button class="add-to-cart" (click)="addToCart(item)">Add to Cart</button>
+      <p class="rating">{{ item.rating }}⭐</p>
+    </div>
+    <div class="product-card-footer">
+      <button class="delete" (click)="delete(id)">Delete</button>
+      <a [routerLink]="'/profile/profile-form/' + id + '/update'" [state]="item"
+        ><button class="update">Update</button></a
+      >
+    </div>
+  </div>
+</div>

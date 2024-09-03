@@ -1,0 +1,31 @@
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.admin-button,
+.user-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 10px;
+}
+
+.admin-button {
+  background-color: #007bff;
+  color: white;
+}
+
+.user-button {
+  background-color: #28a745;
+  color: white;
+}
+
+.admin-button:hover,
+.user-button:hover {
+  opacity: 0.8;
+}

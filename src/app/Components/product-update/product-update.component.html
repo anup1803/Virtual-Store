@@ -1,0 +1,173 @@
+<div class="form-container">
+  <h2>Updating Product</h2>
+
+  <form [formGroup]="productForm" (ngSubmit)="updateProduct()">
+    <div>
+      <label for="thumbnail">Thumbnail:</label>
+      <input
+        formControlName="thumbnail"
+        type="text"
+        id="thumbnail"
+        name="thumbnail"
+        required
+        placeholder="https://cdn.dummyjson.com/product/thumbnail.png"
+      />
+    </div>
+    <div>
+      <label for="title">Title:</label>
+      <input
+        formControlName="title"
+        type="text"
+        id="title"
+        name="title"
+        required
+        placeholder="Apple AirPods Max Silver"
+      />
+    </div>
+    <div>
+      <label for="description">Description:</label>
+      <textarea
+        formControlName="description"
+        id="description"
+        name="description"
+        required
+        rows="4"
+        cols="79"
+        placeholder="The Apple AirPods Max in Silver are premium over-ear headphones with high-fidelity audio, adaptive EQ, and active noise cancellation"
+      ></textarea>
+    </div>
+
+    <div>
+      <label for="price">Price (in IND):</label>
+      <input
+        formControlName="price"
+        type="number"
+        id="price"
+        name="price"
+        step="0.01"
+        placeholder="549.99"
+        required
+      />
+    </div>
+    <div>
+      <label for="rating">Rating:</label>
+      <input
+        formControlName="rating"
+        type="number"
+        id="rating"
+        name="rating"
+        step="0.1"
+        placeholder="4.5"
+        required
+      />
+    </div>
+    <div>
+      <label for="stock">Stock:</label>
+      <input
+        formControlName="stock"
+        type="number"
+        id="stock"
+        name="stock"
+        placeholder="7"
+        required
+      />
+    </div>
+
+    <div>
+      <label for="minimumOrderQuantity">Min Order Quantity:</label>
+      <input
+        formControlName="minimumOrderQuantity"
+        type="number"
+        id="minimumOrderQuantity"
+        name="minimumOrderQuantity"
+        placeholder="7"
+        required
+      />
+    </div>
+
+    <div>
+      <label for="brand">Brand:</label>
+      <input
+        formControlName="brand"
+        type="text"
+        id="brand"
+        name="brand"
+        placeholder="Iphone"
+        required
+      />
+    </div>
+    <div>
+      <label for="weight">Weight (in g):</label>
+      <input
+        formControlName="weight"
+        type="number"
+        id="weight"
+        name="weight"
+        step="0.01"
+        placeholder="200"
+        required
+      />
+    </div>
+    <div>
+      <label for="warranty">Warranty:</label>
+      <input
+        formControlName="warrantyInformation"
+        type="text"
+        id="warranty"
+        name="warranty"
+        placeholder="3 months warranty"
+        required
+      />
+    </div>
+
+    <div>
+      <label for="returnPolicy">Return Policy:</label>
+      <input
+        formControlName="returnPolicy"
+        type="text"
+        id="returnPolicy"
+        name="returnPolicy"
+        placeholder="90 days return policy"
+      />
+    </div>
+    <div formGroupName="dimensions">
+      <p>Dimensions:</p>
+      <div>
+        <label for="width">Width (in mm):</label>
+        <input
+          formControlName="width"
+          type="number"
+          id="width"
+          name="width"
+          step="0.01"
+          placeholder="4.32"
+        />
+      </div>
+      <div>
+        <label for="height">Height (in mm):</label>
+        <input
+          formControlName="height"
+          type="number"
+          id="height"
+          name="height"
+          step="0.01"
+          placeholder="18.32"
+        />
+      </div>
+      <div>
+        <label for="depth">Depth (in mm):</label>
+        <input
+          formControlName="depth"
+          type="number"
+          id="depth"
+          name="depth"
+          step="0.01"
+          placeholder="3.32"
+        />
+      </div>
+    </div>
+    <div>
+      <button type="submit">Update</button>
+    </div>
+  </form>
+</div>

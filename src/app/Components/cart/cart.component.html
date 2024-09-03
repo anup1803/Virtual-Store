@@ -1,0 +1,100 @@
+<ng-container *ngIf="product.length != 0">
+  <section class="cart-section">
+    <div class="cart-container">
+      <div class="cart-content">
+        <div class="cart-items">
+          <ul class="cart-list">
+            <li class="cart-item" *ngFor="let item of product; let i = index">
+              <div class="cart-item-image">
+                <span class="item-number">{{ i + 1 }}</span>
+                <img
+                  class="item-image"
+                  src="{{ item.thumbnail }}"
+                  alt="product photo"
+                />
+              </div>
+
+              <div class="cart-item-details">
+                <div class="cart-item-info">
+                  <p class="item-name">{{ item.title }}</p>
+                  <p class="item-size">{{ item.description }}</p>
+                </div>
+
+                <div class="cart-item-price">
+                  <p class="item-price">{{ item.price }}</p>
+                </div>
+              </div>
+
+              <div class="remove-all-button">
+                <button
+                  type="button"
+                  class="remove-all-btn"
+                  (click)="removeItem(item)"
+                >
+                  Remove
+                </button>
+              </div>
+              <div class="quantity">
+                <p>Min. Quantity :</p>
+                <div class="count">
+                  {{
+                    item.minimumOrderQuantity <= item.stock
+                      ? item.minimumOrderQuantity
+                      : item.minimumOrderQuantity + "(out of stock)"
+                  }}
+                </div>
+                <div class="inc-dec">
+                  <button class="add" (click)="increment(item)">+</button>
+                  <button class="sub" (click)="decrement(item)">-</button>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="remove-order-button">
+          <button
+            type="button"
+            class="remove-order-btn"
+            (click)="emptyCartItems()"
+          >
+            Remove All
+          </button>
+        </div>
+
+        <div class="cart-summary">
+          <div class="subtotal">
+            <p class="subtotal-label">Subtotal</p>
+            <p class="subtotal-amount">{{ subTotalPrice() }}</p>
+          </div>
+          <div class="shipping">
+            <p class="shipping-label">Shipping</p>
+            <p class="shipping-amount">50</p>
+          </div>
+          <div class="total">
+            <p class="total-label">Total</p>
+            <p class="total-amount">{{ grandTotal() }}</p>
+          </div>
+        </div>
+
+        <div class="place-order-button">
+          <button type="button" class="place-order-btn">Place Order</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</ng-container>
+
+<ng-container *ngIf="product.length == 0">
+  <div class="empty-container">
+    <div class="card">
+      <div class="card-title">Empty Card</div>
+      <div class="card-content">This card is currently empty.</div>
+      <div class="go-to-store">
+        <a routerLink="/product"
+          ><button type="button" class="go-to-st">Go To Store</button></a
+        >
+      </div>
+    </div>
+  </div>
+</ng-container>
